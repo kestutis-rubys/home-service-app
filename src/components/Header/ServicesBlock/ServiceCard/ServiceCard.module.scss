@@ -1,0 +1,27 @@
+.serviceCard {
+  height: 125px;
+  width: 150px;
+  background: #f1eeff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: ease-in-out 500ms;
+
+  &:hover {
+    transform: scale(1.05);
+    background: #f1eeff99;
+  }
+
+  .serviceCardIcon {
+    font-size: 40px;
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #785be6;
+  }
+}
