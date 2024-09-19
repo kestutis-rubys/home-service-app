@@ -1,6 +1,6 @@
-import styles from './ServiceCard.module.scss';
+import styles from './ServiceCategoriyCard.module.scss';
 
-export const ServiceCard = (props) => {
+export const ServiceCategoriyCard = (props) => {
   const { text, icon, color } = props;
 
   return (

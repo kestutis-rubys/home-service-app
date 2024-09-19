@@ -1,22 +1,59 @@
 import { Button } from '../../Button/Button';
 import styles from './TopBar.module.scss';
+import { NavLink, useNavigate } from 'react-router-dom';
+4;
+import { routes } from '../../../routes/router';
+
+// import logo from '../../../assets/starfix-logo.png';
 
 export const TopBar = () => {
+  const checkIsActive = (isActive) => {
+    return { color: isActive ? '#785be6' : '#000' };
+  };
+
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    navigate(routes.login);
+  };
+
   return (
     <div className={styles.topBarContainer}>
       <div className={styles.topBar}>
-        <div className='logo'>
-          <h1>Logoipsum</h1>
+        <div className={styles.logo}>
+          {/* <img src={logo} alt='starfix' /> */}
+          <h1>Star Repairs</h1>
         </div>
 
-        <nav className={styles.menu}>
-          <a href='/'>Home</a>
-          <a href='/services'>Services</a>
-          <a href='/about'>About Us</a>
-        </nav>
+        <ul>
+          <li>
+            <NavLink
+              style={({ isActive }) => checkIsActive(isActive)}
+              to={routes.home}
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              style={({ isActive }) => checkIsActive(isActive)}
+              to={routes.services}
+            >
+              Services
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              style={({ isActive }) => checkIsActive(isActive)}
+              to={routes.about}
+            >
+              About Us
+            </NavLink>
+          </li>
+        </ul>
 
         <div className={styles.authButtons}>
-          <Button type='login' text='Login / Sign Up' />
+          <Button action={handleLogin} style='login' text='Login / Sign Up' />
         </div>
       </div>
     </div>

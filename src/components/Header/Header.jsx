@@ -1,9 +1,9 @@
 import styles from './Header.module.scss';
 
-import { TextInput } from '../TextInput/TextInput';
+import { TextField } from '../TextField/TextField';
 
 import { IoSearch } from 'react-icons/io5';
-import { ServicesBlock } from './ServicesBlock/ServicesBlock';
+import { ServicesCategoriesBlock } from './ServicesCategoriesBlock/ServicesCategoriesBlock';
 
 export const Header = () => {
   return (
@@ -12,13 +12,13 @@ export const Header = () => {
         <h1>
           Find Home <span>Service/Repair</span> Near You
         </h1>
-        <h2>Explore Best Home Service & Repair near you</h2>
+        <h2>Feel like a star at your own home</h2>
       </div>
       <div className={styles.headerInputContainer}>
-        <TextInput type='search' placeholder='Search...' />
+        <TextField style='search' placeholder='Search...' />
         <IoSearch className={styles.headerSearchIcon} />
       </div>
-      <ServicesBlock />
+      <ServicesCategoriesBlock />
     </header>
   );
 };

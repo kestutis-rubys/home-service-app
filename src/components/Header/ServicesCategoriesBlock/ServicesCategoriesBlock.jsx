@@ -1,4 +1,4 @@
-import styles from './ServicesBlock.module.scss';
+import styles from './ServicesCategoriesBlock.module.scss';
 
 import {
   IoConstruct,
@@ -8,9 +8,9 @@ import {
   IoCar,
   IoHome,
 } from 'react-icons/io5';
-import { ServiceCard } from './ServiceCard/ServiceCard';
+import { ServiceCategoriyCard } from './ServiceCategoryCard/ServiceCategoriyCard';
 
-export const ServicesBlock = () => {
+export const ServicesCategoriesBlock = () => {
   const categories = [
     { name: 'Cleaning', icon: <IoHome />, color: '#a72ee0' },
     { name: 'Repair', icon: <IoConstruct />, color: '#e1b953' },
@@ -23,7 +23,7 @@ export const ServicesBlock = () => {
   return (
     <div className={styles.servicesContainer}>
       {categories.map((item, i) => (
-        <ServiceCard
+        <ServiceCategoriyCard
           key={i}
           text={item.name}
           icon={item.icon}

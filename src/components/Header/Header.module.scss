@@ -1,7 +1,7 @@
 .headerContainer {
   width: 100%;
-  margin: 80px auto 0 auto;
-  height: 65vh;
+  margin: 40px auto 0 auto;
+  height: 55vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,6 +41,7 @@
     margin-top: 20px;
     width: 55%;
     justify-content: center;
+    align-items: center;
 
     .headerSearchIcon {
       font-size: 50px;

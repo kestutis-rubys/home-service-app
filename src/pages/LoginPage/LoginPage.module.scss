@@ -1,0 +1,29 @@
+.loginPageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  gap: 35px;
+
+  .loginPageForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .registerText {
+    text-align: center;
+
+    strong {
+      color: #785be6;
+      text-decoration: none;
+      transition: ease-in-out 500ms;
+      cursor: pointer;
+
+      &:hover {
+        color: #000;
+        transition: ease-in-out 500ms;
+      }
+    }
+  }
+}
