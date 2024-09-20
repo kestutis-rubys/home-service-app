@@ -5,6 +5,7 @@ import { ServicePage } from '../pages/ServicesPage/ServicePage';
 import { HeaderLayout } from '../layouts/HeaderLayout/HeaderLayout';
 import { LoginPage } from '../pages/LoginPage/LoginPage';
 import { RegisterPage } from '../pages/RegisterPage/RegisterPage';
+import { CategoryPage } from '../pages/CategoryPage/CategoryPage';
 
 export const routes = {
   home: '/',
@@ -12,6 +13,7 @@ export const routes = {
   about: '/about',
   login: '/login',
   register: '/register',
+  category: 'search/:category',
 };
 
 export const router = createBrowserRouter([
@@ -38,6 +40,10 @@ export const router = createBrowserRouter([
       {
         path: routes.register,
         element: <RegisterPage />,
+      },
+      {
+        path: routes.category,
+        element: <CategoryPage />,
       },
     ],
   },

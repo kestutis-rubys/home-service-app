@@ -4,7 +4,7 @@ import { ServiceBlock } from '../../components/ServicesBlock/ServiceBlock';
 export const HomePage = () => {
   return (
     <>
-      <Header />;
+      <Header />
       <ServiceBlock title='Popular Business' />
     </>
   );

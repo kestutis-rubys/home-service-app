@@ -1,3 +1,12 @@
+import {
+  IoConstruct,
+  IoBrush,
+  IoHammer,
+  IoFlash,
+  IoCar,
+  IoHome,
+} from 'react-icons/io5';
+
 export const demoData = [
   {
     category: 'Plumbing',
@@ -96,3 +105,14 @@ export const demoData = [
       'https://img.freepik.com/free-photo/man-changing-light-bulb_53876-13506.jpg?t=st=1726683476~exp=1726687076~hmac=014439601db7371b4f8078239f4ad4fc41f9e59a03d31fa4d18e8fba9ed7b9a0&w=1060',
   },
 ];
+
+const categories = [
+  { name: 'Cleaning', icon: <IoHome />, color: '#a72ee0' },
+  { name: 'Repair', icon: <IoConstruct />, color: '#e1b953' },
+  { name: 'Painting', icon: <IoBrush />, color: '#469c98' },
+  { name: 'Shifting', icon: <IoCar />, color: '#d04d45' },
+  { name: 'Plumbing', icon: <IoHammer />, color: '#d8953d' },
+  { name: 'Electric', icon: <IoFlash />, color: '#295fb7' },
+];
+
+export default categories;

@@ -1,35 +1,33 @@
 import styles from './ServicesCategoriesBlock.module.scss';
 
-import {
-  IoConstruct,
-  IoBrush,
-  IoHammer,
-  IoFlash,
-  IoCar,
-  IoHome,
-} from 'react-icons/io5';
+import { useEffect, useState } from 'react';
+import { PuffLoader } from 'react-spinners';
 import { ServiceCategoriyCard } from './ServiceCategoryCard/ServiceCategoriyCard';
+import axios from 'axios';
 
 export const ServicesCategoriesBlock = () => {
-  const categories = [
-    { name: 'Cleaning', icon: <IoHome />, color: '#a72ee0' },
-    { name: 'Repair', icon: <IoConstruct />, color: '#e1b953' },
-    { name: 'Painting', icon: <IoBrush />, color: '#469c98' },
-    { name: 'Shifting', icon: <IoCar />, color: '#d04d45' },
-    { name: 'Plumbing', icon: <IoHammer />, color: '#d8953d' },
-    { name: 'Electric', icon: <IoFlash />, color: '#295fb7' },
-  ];
+  const [categories, setCategories] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:5000/api/categories')
+      .then((res) => setCategories(res.data));
+  }, []);
 
   return (
     <div className={styles.servicesContainer}>
-      {categories.map((item, i) => (
-        <ServiceCategoriyCard
-          key={i}
-          text={item.name}
-          icon={item.icon}
-          color={item.color}
-        />
-      ))}
+      {categories ? (
+        categories.map((item, i) => (
+          <ServiceCategoriyCard
+            key={i}
+            text={item.name}
+            icon={item.icon}
+            color={item.color}
+          />
+        ))
+      ) : (
+        <PuffLoader color='#785be6' size={55} />
+      )}
     </div>
   );
 };

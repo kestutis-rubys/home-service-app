@@ -4,8 +4,6 @@ import { Button } from '../Button/Button';
 export const ServiceCard = (props) => {
   const { category, serviceName, name, address, photoUrl } = props.data;
 
-  console.log(props);
-
   return (
     <div className={styles.cardContainer}>
       <img src={photoUrl} alt={serviceName} />
