@@ -1,6 +1,11 @@
 import { RouterProvider } from 'react-router-dom';
+import { CategoriesContextProvider } from './context/CategoriesContextProvider';
 import { router } from './routes/router.jsx';
 
 export const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <CategoriesContextProvider>
+      <RouterProvider router={router} />
+    </CategoriesContextProvider>
+  );
 };

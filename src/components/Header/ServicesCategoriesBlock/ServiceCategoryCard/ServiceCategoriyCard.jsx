@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './ServiceCategoriyCard.module.scss';
-import { getIcon } from '../../../../pages/utils/getIcon';
+import { getIcon } from '../../../../utils/getIcon';
 
 export const ServiceCategoriyCard = (props) => {
   const { text, icon, color } = props;

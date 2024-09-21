@@ -1,6 +1,26 @@
 .categoryPageContainer {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
   display: flex;
+  margin: 25px auto;
+  gap: 25px;
+  height: 80vh;
+
+  .categoryPageContent {
+    margin: 25px 0;
+
+    h1 {
+      font-size: 18px;
+    }
+  }
+
+  .categoryPageCardsContainer {
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }

@@ -1,5 +1,5 @@
-import { Button } from '../../Button/Button';
 import styles from './TopBar.module.scss';
+import { Button } from '../../Button/Button';
 import { NavLink, useNavigate } from 'react-router-dom';
 4;
 import { routes } from '../../../routes/router';
@@ -17,12 +17,16 @@ export const TopBar = () => {
     navigate(routes.login);
   };
 
+  const handleHome = () => {
+    navigate(routes.home);
+  };
+
   return (
     <div className={styles.topBarContainer}>
       <div className={styles.topBar}>
-        <div className={styles.logo}>
+        <div className={styles.logo} onClick={handleHome}>
           {/* <img src={logo} alt='starfix' /> */}
-          <h1>Star Repairs</h1>
+          <h1>Stars Repairs</h1>
         </div>
 
         <ul>

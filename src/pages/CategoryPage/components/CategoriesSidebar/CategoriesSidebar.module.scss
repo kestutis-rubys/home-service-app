@@ -1,3 +1,17 @@
 .categoriesSidebarContainer {
+  display: flex;
+  flex-direction: column;
   width: 300px;
+  gap: 20px;
+  h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #785be6;
+  }
+
+  .categoriesLinksBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }

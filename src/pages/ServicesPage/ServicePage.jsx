@@ -1,3 +1,10 @@
+import styles from './ServicePage.module.scss';
+import { ServiceBlock } from '../../components/ServicesBlock/ServiceBlock';
+
 export const ServicePage = () => {
-  return <div>ServicePage</div>;
+  return (
+    <div className={styles.servicePageContainer}>
+      <ServiceBlock title='All Services' />
+    </div>
+  );
 };
