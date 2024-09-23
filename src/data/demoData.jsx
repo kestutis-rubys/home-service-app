@@ -48,7 +48,7 @@ export const demoData = [
       'https://img.freepik.com/free-photo/woman-assembling-diy-chair-from-scratch_53876-127259.jpg',
   },
   {
-    category: 'Reipair',
+    category: 'Repair',
     serviceName: 'Air Conditioning Repair',
     name: 'Jakob Martinez',
     address: '404 Cedar St, Springfield',

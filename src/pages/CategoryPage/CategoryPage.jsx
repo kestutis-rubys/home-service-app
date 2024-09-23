@@ -18,8 +18,6 @@ export const CategoryPage = () => {
     setFilteredBusiness(filteredData);
   }, [category]);
 
-  console.log(filteredBusiness);
-
   return (
     <div className={styles.categoryPageContainer}>
       <CategoriesSidebar />

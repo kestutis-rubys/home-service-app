@@ -6,6 +6,7 @@ import { HeaderLayout } from '../layouts/HeaderLayout/HeaderLayout';
 import { LoginPage } from '../pages/LoginPage/LoginPage';
 import { RegisterPage } from '../pages/RegisterPage/RegisterPage';
 import { CategoryPage } from '../pages/CategoryPage/CategoryPage';
+import { SearchCategoryPage } from '../pages/SearchCategoryPage/SearchCategoryPage';
 
 export const routes = {
   home: '/',
@@ -13,7 +14,8 @@ export const routes = {
   about: '/about',
   login: '/login',
   register: '/register',
-  category: 'search/:category',
+  category: '/search/:category',
+  search: '/category/:search',
 };
 
 export const router = createBrowserRouter([
@@ -44,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: routes.category,
         element: <CategoryPage />,
+      },
+      {
+        path: routes.search,
+        element: <SearchCategoryPage />,
       },
     ],
   },

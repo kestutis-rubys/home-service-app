@@ -3,8 +3,11 @@ import { TextField } from '../../components/TextField/TextField';
 import { Button } from '../../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { routes } from '../../routes/router';
+import { UserContext } from '../../context/UserContextProvider';
+import { useContext } from 'react';
 
 export const LoginPage = () => {
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleRegister = async () => {
@@ -13,6 +16,12 @@ export const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log();
+    if (e.target.username.value && e.target.password.value !== '') {
+      localStorage.setItem('user', JSON.stringify(e.target.username.value));
+      setUser(e.target.username.value);
+      navigate(routes.home);
+    }
   };
 
   return (
