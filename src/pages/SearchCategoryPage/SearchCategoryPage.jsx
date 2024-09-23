@@ -17,6 +17,7 @@ export const SearchCategoryPage = () => {
 
   return (
     <div className={styles.categoryPageContainer}>
+      <h1>Business</h1>
       <div className={styles.categoryPageCardsContainer}>
         {!filteredData.length ? (
           <p>Business was not found</p>
