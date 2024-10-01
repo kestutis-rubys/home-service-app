@@ -10,14 +10,31 @@
 }
 
 .simple {
-  display: flex;
-  max-width: 500px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  vertical-align: baseline;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.16px;
+  border-radius: 0;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px 25px;
-  font-size: 20px;
   height: 40px;
-  margin: 10px 0 0 0;
-  color: #808080;
+  border: none;
+  border-bottom: 1px solid #8d8d8d;
+  padding: 0 16px;
+  color: #161616;
+  margin: 10px 0;
+  transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9),
+    outline 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  :focus {
+    outline: 2px solid #0f62fe;
+    outline-offset: -2px;
+  }
+}
+
+.error {
+  color: #ff0000;
 }

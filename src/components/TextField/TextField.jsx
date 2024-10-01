@@ -19,7 +19,7 @@ export const TextField = (props) => {
         required
         placeholder={placeholder}
       />
-      {error && <small>{error}</small>}
+      {error && <small className={styles.error}>{error}</small>}
     </>
   );
 };

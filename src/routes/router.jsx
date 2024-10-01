@@ -7,6 +7,7 @@ import { LoginPage } from '../pages/LoginPage/LoginPage';
 import { RegisterPage } from '../pages/RegisterPage/RegisterPage';
 import { CategoryPage } from '../pages/CategoryPage/CategoryPage';
 import { SearchCategoryPage } from '../pages/SearchCategoryPage/SearchCategoryPage';
+import { ProfilePage } from '../pages/ProfilePage/ProfilePage';
 
 export const routes = {
   home: '/',
@@ -14,6 +15,7 @@ export const routes = {
   about: '/about',
   login: '/login',
   register: '/register',
+  profile: '/profile',
   category: '/search/:category',
   search: '/category/:search',
 };
@@ -42,6 +44,10 @@ export const router = createBrowserRouter([
       {
         path: routes.register,
         element: <RegisterPage />,
+      },
+      {
+        path: routes.profile,
+        element: <ProfilePage />,
       },
       {
         path: routes.category,

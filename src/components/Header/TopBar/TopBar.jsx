@@ -25,6 +25,10 @@ export const TopBar = () => {
     navigate(routes.home);
   };
 
+  const handleProfile = () => {
+    navigate(routes.profile);
+  };
+
   return (
     <div className={styles.topBarContainer}>
       <div className={styles.topBar}>
@@ -62,7 +66,7 @@ export const TopBar = () => {
 
         <div className={styles.authButtons}>
           {user ? (
-            <p className={styles.user}>
+            <p className={styles.user} onClick={() => handleProfile()}>
               <span>{user.split('')[0].toUpperCase()}</span>
             </p>
           ) : (

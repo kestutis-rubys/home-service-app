@@ -1,12 +1,12 @@
-.loginPageContainer {
+.registerPageContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 84vh;
+  height: 90vh;
   gap: 35px;
 
-  .loginFormContainer {
+  .registerFormContainer {
     background: #fff;
     max-width: 500px;
     height: 700px;
@@ -24,27 +24,11 @@
       margin-bottom: 35px;
       font-weight: 700;
     }
-  }
-
-  .loginPageForm {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 75%;
-  }
-  .registerText {
-    text-align: center;
-
-    strong {
-      color: #785be6;
-      text-decoration: none;
-      transition: ease-in-out 500ms;
-      cursor: pointer;
-
-      &:hover {
-        color: #000;
-        transition: ease-in-out 500ms;
-      }
+    .registerPageForm {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 75%;
     }
   }
 }

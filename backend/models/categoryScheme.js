@@ -4,12 +4,12 @@ const categorySchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    // unique: true,
+    unique: true,
   },
   icon: {
     type: String,
     required: true,
-    // unique: true,
+    unique: true,
   },
   color: {
     type: String,
