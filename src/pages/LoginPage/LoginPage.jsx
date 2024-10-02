@@ -7,12 +7,14 @@ import { UserContext } from '../../context/UserContextProvider';
 import { useContext, useEffect, useState } from 'react';
 import { useLoginFormData } from './hooks/useLoginFormData';
 import { useLoginFormValidation } from './hooks/useLoginFormValidation';
+import { toast } from 'react-toastify';
 
 import bgImg from '../../assets/login_bg.jpg';
 
 export const LoginPage = () => {
   const [errors, setErrors] = useState({});
   const [isShowingForm, setIsShowingForm] = useState(false);
+  const notify = () => toast('🦄 Congrats, you logged successful!');
 
   const { user, setUser } = useContext(UserContext);
   const { formData, setFormData, handleChange } = useLoginFormData();
@@ -43,6 +45,7 @@ export const LoginPage = () => {
     if (isFormValid) {
       localStorage.setItem('user', JSON.stringify(e.target.username.value));
       setUser(formData.username);
+      notify();
       navigate(routes.home);
       setFormData({ username: '', password: '' });
       setErrors({});

@@ -31,6 +31,8 @@ export const RegisterPage = () => {
               // onChange={handleInputChange}
               // error={formErrors.username}
             />
+          </div>
+          <div>
             <TextField
               label='Name'
               name='name'

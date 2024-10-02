@@ -5,6 +5,7 @@ import { UserContext } from '../../../context/UserContextProvider';
 4;
 import { routes } from '../../../routes/router';
 import { useContext } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 
 // import logo from '../../../assets/starfix-logo.png';
 

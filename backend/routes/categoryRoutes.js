@@ -1,5 +1,5 @@
 import express from 'express';
-import Category from '../models/categoryScheme.js';
+import Category from '../models/categoryModel.js';
 
 const router = express.Router();
 
