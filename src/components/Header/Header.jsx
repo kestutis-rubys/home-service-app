@@ -6,6 +6,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { IoSearch } from 'react-icons/io5';
 import { ServicesCategoriesBlock } from './ServicesCategoriesBlock/ServicesCategoriesBlock';
 import { useEffect, useState } from 'react';
+import { Button } from '../Button/Button';
 
 export const Header = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -22,8 +23,11 @@ export const Header = () => {
     }
   }, [searchParams]);
 
-  const handleSearchInput = () => {
-    setSearchParams({ search: searchInputData });
+  const handleSearchInput = (e) => {
+    e.preventDefault();
+    if (searchInputData.length) {
+      setSearchParams({ search: searchInputData });
+    }
   };
 
   return (
@@ -34,17 +38,19 @@ export const Header = () => {
         </h1>
         <h2>Feel like a star at your own home</h2>
       </div>
-      <div className={styles.headerInputContainer}>
+      <form
+        className={styles.headerInputFormContainer}
+        onSubmit={handleSearchInput}
+      >
         <TextField
           style='search'
           onChange={handleChange}
           placeholder='Search...'
+          onFocus={() => setSearchInputData('')}
+          value={searchInputData}
         />
-        <IoSearch
-          className={styles.headerSearchIcon}
-          onClick={handleSearchInput}
-        />
-      </div>
+        <Button style='icon' icon={<IoSearch />} />
+      </form>
       <ServicesCategoriesBlock />
     </header>
   );

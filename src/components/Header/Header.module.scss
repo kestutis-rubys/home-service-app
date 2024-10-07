@@ -41,7 +41,7 @@
     }
   }
 
-  .headerInputContainer {
+  .headerInputFormContainer {
     display: flex;
     gap: 20px;
     margin-top: 20px;
@@ -51,15 +51,6 @@
 
     @media screen and (max-width: $small) {
       width: 85%;
-    }
-
-    .headerSearchIcon {
-      font-size: 50px;
-      background-color: #785be6;
-      color: #fff;
-      padding: 15px;
-      border-radius: 50%;
-      cursor: pointer;
     }
   }
 }

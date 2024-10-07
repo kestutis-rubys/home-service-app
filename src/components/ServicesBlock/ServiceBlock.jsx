@@ -4,13 +4,16 @@ import { BussinessContext } from '../../context/BussinessContextProvider';
 import { useContext } from 'react';
 
 export const ServiceBlock = (props) => {
-  const { title, filteredData } = props;
+  const { title, searchText, filteredData } = props;
 
   const { businessData } = useContext(BussinessContext);
 
   return (
     <div className={styles.serviceBlockContainer}>
-      <h2>{title}</h2>
+      <h2>
+        {title}
+        <span>{searchText}</span>
+      </h2>
       <div className={styles.serviceBlockContainerCards}>
         {filteredData
           ? filteredData.map((item, i) => <ServiceCard key={i} data={item} />)

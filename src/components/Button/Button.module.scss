@@ -31,3 +31,18 @@
   cursor: pointer;
   width: fit-content;
 }
+
+.icon {
+  font-size: 20px;
+  background-color: #785be6;
+  color: #fff;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}

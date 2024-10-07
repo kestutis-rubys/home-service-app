@@ -13,6 +13,12 @@
     color: #000;
     margin-bottom: 0;
     margin: 25px 0;
+    display: flex;
+    gap: 10px;
+
+    span {
+      color: #795be660;
+    }
   }
 
   .serviceBlockContainerCards {
