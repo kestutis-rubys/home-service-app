@@ -1,5 +1,6 @@
-import { useNavigate } from 'react-router-dom';
 import styles from './ServiceCategoriyCard.module.scss';
+
+import { useNavigate } from 'react-router-dom';
 import { getIcon } from '../../../../utils/getIcon';
 
 export const ServiceCategoriyCard = (props) => {

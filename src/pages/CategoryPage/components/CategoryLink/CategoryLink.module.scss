@@ -19,6 +19,10 @@
     box-shadow: 0 0 5px rgba(120, 91, 230, 0.7);
     transition: ease-in-out 500ms;
   }
+
+  @media screen and (max-width: $small) {
+    font-size: 14px;
+  }
 }
 
 .active {

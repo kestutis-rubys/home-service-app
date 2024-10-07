@@ -26,7 +26,6 @@
 
   @media screen and (max-width: $small) {
     margin: 0 25px;
-    width: 100%;
-    width: fit-content;
+    width: auto;
   }
 }

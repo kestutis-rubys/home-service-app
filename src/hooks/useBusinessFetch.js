@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
-import { apiCategoryService } from '../services/apiCategoryServices';
+import { apieBusinessServices } from '../services/apiBusinessServices';
 
-export const useCategoriesFetch = () => {
-  const [categories, setCategories] = useState(null);
+export const useBusinessFetch = () => {
+  const [business, setBusiness] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    apiCategoryService
+    apieBusinessServices
       .get()
       .then((r) => {
-        setCategories(r);
+        setBusiness(r);
         setLoading(false);
       })
       .catch((e) => {
@@ -19,5 +19,5 @@ export const useCategoriesFetch = () => {
       });
   }, []);
 
-  return [categories, loading, error];
+  return [business, loading, error];
 };
