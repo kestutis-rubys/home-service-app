@@ -1,5 +1,5 @@
-import { getIcon } from '../../../../utils/getIcon';
 import styles from './CategoryLink.module.scss';
+import { getIcon } from '../../../../utils/getIcon';
 import { NavLink } from 'react-router-dom';
 
 export const CategoryLink = (props) => {

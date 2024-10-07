@@ -1,20 +1,19 @@
 import styles from './TopBar.module.scss';
 import { Button } from '../../Button/Button';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../context/UserContextProvider';
-4;
+import { PageWidthContext } from '../../../context/PageWidthContextProvider';
 import { routes } from '../../../routes/router';
+
 import { useContext } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
+import { Menu } from '../Menu/Menu';
 
 // import logo from '../../../assets/starfix-logo.png';
 
 export const TopBar = () => {
   const { user } = useContext(UserContext);
-
-  const checkIsActive = (isActive) => {
-    return { color: isActive ? '#785be6' : '#000' };
-  };
+  const { width } = useContext(PageWidthContext);
 
   const navigate = useNavigate();
 
@@ -38,32 +37,7 @@ export const TopBar = () => {
           <h1>Stars Repairs</h1>
         </div>
 
-        <ul>
-          <li>
-            <NavLink
-              style={({ isActive }) => checkIsActive(isActive)}
-              to={routes.home}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              style={({ isActive }) => checkIsActive(isActive)}
-              to={routes.services}
-            >
-              Services
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              style={({ isActive }) => checkIsActive(isActive)}
-              to={routes.about}
-            >
-              About Us
-            </NavLink>
-          </li>
-        </ul>
+        {width > 768 && <Menu />}
 
         <div className={styles.authButtons}>
           {user ? (

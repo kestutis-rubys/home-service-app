@@ -3,14 +3,14 @@ import { demoData } from '../../data/demoData';
 import { ServiceCard } from '../ServiceCard/ServiceCard';
 
 export const ServiceBlock = (props) => {
-  const { title } = props;
+  const { title, data } = props;
   return (
     <div className={styles.serviceBlockContainer}>
       <h2>{title}</h2>
       <div className={styles.serviceBlockContainerCards}>
-        {demoData.map((item, i) => (
-          <ServiceCard key={i} data={item} />
-        ))}
+        {data
+          ? data.map((item, i) => <ServiceCard key={i} data={item} />)
+          : demoData.map((item, i) => <ServiceCard key={i} data={item} />)}
       </div>
     </div>
   );

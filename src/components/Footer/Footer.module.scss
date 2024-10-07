@@ -1,14 +1,15 @@
+@import '../../index.scss';
+
 .footerContainer {
   width: 100%;
+  max-width: 1280px;
   height: 8vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
 
-  div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    max-width: 1280px;
-    color: #000;
-    margin: 0 auto;
+  @media screen and (max-width: $small) {
+    justify-content: center;
   }
 }

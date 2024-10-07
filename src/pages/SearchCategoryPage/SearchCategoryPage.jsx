@@ -1,8 +1,8 @@
 import styles from './SearchCategoryPage.module.scss';
 
 import { useParams } from 'react-router-dom';
-import { ServiceCard } from '../../components/ServiceCard/ServiceCard';
 import { demoData } from '../../data/demoData';
+import { ServiceBlock } from '../../components/ServicesBlock/ServiceBlock';
 
 export const SearchCategoryPage = () => {
   const { search } = useParams();
@@ -17,14 +17,7 @@ export const SearchCategoryPage = () => {
 
   return (
     <div className={styles.categoryPageContainer}>
-      <h1>Business</h1>
-      <div className={styles.categoryPageCardsContainer}>
-        {!filteredData.length ? (
-          <p>Business was not found</p>
-        ) : (
-          filteredData.map((item, i) => <ServiceCard key={i} data={item} />)
-        )}
-      </div>
+      <ServiceBlock title='Filtered Business' data={filteredData} />
     </div>
   );
 };

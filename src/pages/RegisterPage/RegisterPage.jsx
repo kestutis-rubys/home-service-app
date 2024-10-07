@@ -65,6 +65,8 @@ export const RegisterPage = () => {
               // onChange={handleInputChange}
               // error={formErrors.password}
             />
+          </div>
+          <div>
             <TextField
               type='password'
               label='Confirm Password'

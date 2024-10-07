@@ -5,7 +5,7 @@ export const Footer = () => {
 
   return (
     <div className={styles.footerContainer}>
-      <div>© {date.getFullYear()}. Stars Repair</div>
+      © {date.getFullYear()}. Stars Repair
     </div>
   );
 };

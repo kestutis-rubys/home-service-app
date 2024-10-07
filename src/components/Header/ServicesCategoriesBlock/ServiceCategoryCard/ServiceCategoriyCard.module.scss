@@ -1,3 +1,5 @@
+@import '../../../../index.scss';
+
 .serviceCard {
   height: 125px;
   width: 150px;
@@ -23,5 +25,16 @@
     font-size: 14px;
     font-weight: 600;
     color: #785be6;
+  }
+
+  @media screen and (max-width: $small) {
+    height: 100px;
+    width: 120px;
+    .serviceCardIcon {
+      font-size: 30px;
+    }
+    h4 {
+      font-size: 12px;
+    }
   }
 }

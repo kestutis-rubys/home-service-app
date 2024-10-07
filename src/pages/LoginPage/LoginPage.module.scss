@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 .loginPageContainer {
   display: flex;
   flex-direction: column;
@@ -5,6 +7,9 @@
   align-items: center;
   height: 84vh;
   gap: 35px;
+  background: url('../../assets/login_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .loginFormContainer {
     background: #fff;
@@ -46,5 +51,9 @@
         transition: ease-in-out 500ms;
       }
     }
+  }
+
+  @media screen and (max-width: $small) {
+    padding: 0 25px;
   }
 }

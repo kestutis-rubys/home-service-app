@@ -9,8 +9,6 @@ import { useLoginFormData } from './hooks/useLoginFormData';
 import { useLoginFormValidation } from './hooks/useLoginFormValidation';
 import { toast } from 'react-toastify';
 
-import bgImg from '../../assets/login_bg.jpg';
-
 export const LoginPage = () => {
   const [errors, setErrors] = useState({});
   const [isShowingForm, setIsShowingForm] = useState(false);
@@ -54,14 +52,7 @@ export const LoginPage = () => {
 
   return (
     isShowingForm && (
-      <div
-        className={styles.loginPageContainer}
-        style={{
-          backgroundImage: `url(${bgImg})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-        }}
-      >
+      <div className={styles.loginPageContainer}>
         <div className={styles.loginFormContainer}>
           <h2>Login</h2>
           <form className={styles.loginPageForm} onSubmit={handleSubmit}>

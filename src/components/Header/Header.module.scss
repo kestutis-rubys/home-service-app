@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 .headerContainer {
   width: 100%;
   margin: 40px auto 0 auto;
@@ -23,6 +25,10 @@
       color: #000;
       margin-bottom: 0;
 
+      @media screen and (max-width: $small) {
+        font-size: 25px;
+      }
+
       span {
         color: #785be6;
       }
@@ -42,6 +48,10 @@
     width: 55%;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: $small) {
+      width: 85%;
+    }
 
     .headerSearchIcon {
       font-size: 50px;

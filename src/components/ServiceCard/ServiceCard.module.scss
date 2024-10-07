@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 .cardContainer {
   display: flex;
   flex-direction: column;
@@ -23,6 +25,11 @@
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
+
+    @media screen and (max-width: $small) {
+      width: 215px;
+      height: 140px;
+    }
   }
 
   .textContainer {
@@ -65,5 +72,13 @@
         font-weight: 500;
       }
     }
+
+    @media screen and (max-width: $small) {
+    }
+  }
+
+  @media screen and (max-width: $small) {
+    width: 215px;
+    height: 350px;
   }
 }

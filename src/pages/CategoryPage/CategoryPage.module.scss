@@ -1,16 +1,22 @@
+@import '../../index.scss';
+
 .categoryPageContainer {
   width: 100%;
   max-width: 1280px;
   display: flex;
   margin: 25px auto;
   gap: 25px;
-  height: 80vh;
+  min-height: 80vh;
 
   .categoryPageContent {
     margin: 25px 0;
 
     h1 {
       font-size: 18px;
+    }
+
+    @media screen and (max-width: $small) {
+      margin: 0 25px;
     }
   }
 
@@ -22,5 +28,15 @@
     width: 100%;
     justify-content: flex-start;
     align-items: center;
+
+    @media screen and (max-width: $small) {
+      grid-template-columns: 1fr 1fr;
+
+      gap: 5px;
+    }
+  }
+
+  @media screen and (max-width: $small) {
+    flex-direction: column;
   }
 }
