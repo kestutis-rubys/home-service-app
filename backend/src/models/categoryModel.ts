@@ -1,5 +1,11 @@
 import mongoose from 'mongoose';
 
+interface Category {
+  name: string;
+  icon: string;
+  color: string;
+}
+
 const categorySchema = new mongoose.Schema({
   name: {
     type: String,
@@ -17,6 +23,7 @@ const categorySchema = new mongoose.Schema({
   },
 });
 
-const CategoryModel = mongoose.model('Category', categorySchema);
-
-export default CategoryModel;
+export const CategoryModel = mongoose.model<Category>(
+  'Category',
+  categorySchema,
+);

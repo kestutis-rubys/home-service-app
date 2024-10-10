@@ -1,6 +1,14 @@
 import mongoose from 'mongoose';
 
-const businessSchema = new mongoose.Schema({
+interface Business {
+  category: string;
+  serviceName: string;
+  name: string;
+  address: string;
+  photoUrl: string;
+}
+
+const businessSchema = new mongoose.Schema<Business>({
   category: {
     type: String,
     required: true,
@@ -23,6 +31,7 @@ const businessSchema = new mongoose.Schema({
   },
 });
 
-const BusinessModel = mongoose.model('Business', businessSchema);
-
-export default BusinessModel;
+export const BusinessModel = mongoose.model<Business>(
+  'Business',
+  businessSchema,
+);

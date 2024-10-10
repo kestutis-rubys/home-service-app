@@ -34,7 +34,7 @@ export const TopBar: React.FC = () => {
       <div className={styles.topBar}>
         <div className={styles.logo} onClick={handleHome}>
           {/* <img src={logo} alt='starfix' /> */}
-          <h1>Stars Repairs</h1>
+          <h1>Stars' Repairs</h1>
         </div>
 
         {context.width > 768 && <Menu />}
