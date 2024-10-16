@@ -43,8 +43,6 @@ const BusinessPage: React.FC = () => {
     });
   };
 
-  console.log(getSimilarBusiness());
-
   return (
     <div className={styles.businessPageContainer}>
       <div className={styles.userBlock}>
