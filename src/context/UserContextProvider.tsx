@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { getUser } from '../services/api-services';
 
 export interface User {
   id: string;
@@ -19,16 +20,12 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [user, setUser] = useState<User | null>(null);
 
-  console.log(user);
-
   useEffect(() => {
-    const user = localStorage.getItem('user');
-    if (user) {
-      try {
-        setUser(JSON.parse(user));
-      } catch (error) {
-        console.error('Error parsing user data', error);
-      }
+    const token: string | null = localStorage.getItem('token');
+    if (token) {
+      getUser(token).then((response) => {
+        setUser(response);
+      });
     }
   }, []);
 

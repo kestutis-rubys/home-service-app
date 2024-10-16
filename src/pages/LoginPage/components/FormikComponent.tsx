@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { routes } from '../../../routes/router';
 import { useContext } from 'react';
 import { UserContext } from '../../../context/UserContextProvider';
-import { login, LoginData } from '../../../services/api-services';
+import { login } from '../../../services/api-services';
 
 interface FormValues {
   username: string;
@@ -33,7 +33,7 @@ export const FormikComponent: React.FC = () => {
     login(values).then((response) => {
       if (response.token) {
         localStorage.setItem('token', response.token);
-        context?.setUser(response.name);
+        context?.setUser(response.data);
         navigate(routes.home);
         notify();
       }

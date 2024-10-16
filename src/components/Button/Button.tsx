@@ -3,9 +3,9 @@ import styles from './Button.module.scss';
 interface ButtonProps {
   action?: () => void;
   text: string;
-  style: 'login' | 'loginForm' | 'service' | 'icon';
+  style: 'login' | 'loginForm' | 'service' | 'icon' | 'book-appoinment';
   type: 'button' | 'submit';
-  disabled: boolean;
+  disabled?: boolean;
   icon?: React.ReactNode;
 }
 

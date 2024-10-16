@@ -55,3 +55,21 @@ export const login = async (data: LoginData) => {
     }
   }
 };
+
+export const getUser = async (token: string) => {
+  try {
+    const response = await instance.get('/users', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    if (error instanceof Error) {
+      const errorMessage = (error as any).response?.data;
+      return errorMessage;
+    } else {
+      return 'An unknown error occurred';
+    }
+  }
+};

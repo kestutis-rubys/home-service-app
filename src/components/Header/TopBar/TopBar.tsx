@@ -40,24 +40,22 @@ export const TopBar: React.FC = () => {
 
         {context.width > 768 && <Menu />}
 
-        <div className={styles.authButtons}>
-          {userContext?.user?.name ? (
-            <div className={styles.user} onClick={() => handleProfile()}>
-              <span>{userContext?.user?.name?.charAt(0).toUpperCase()}</span>
-              <div className={styles.userMenu}>
-                <UserMenu />
-              </div>
+        {userContext?.user?.name ? (
+          <div className={styles.user} onClick={() => handleProfile()}>
+            <span>{userContext?.user?.name?.charAt(0).toUpperCase()}</span>
+            <div className={styles.userMenu}>
+              <UserMenu />
             </div>
-          ) : (
-            <Button
-              action={handleLogin}
-              style='login'
-              type='button'
-              text='Login / Sign Up'
-              disabled={false}
-            />
-          )}
-        </div>
+          </div>
+        ) : (
+          <Button
+            action={handleLogin}
+            style='login'
+            type='button'
+            text='Login / Sign Up'
+            disabled={false}
+          />
+        )}
       </div>
     </div>
   );

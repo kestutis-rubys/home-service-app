@@ -6,6 +6,7 @@ import styles from './FormikComponent.module.scss';
 import { register, NewUserData } from '../../../services/api-services';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { routes } from '../../../routes/router';
 
 const validationSchema = Yup.object({
   username: Yup.string().required('Username is required'),
@@ -32,7 +33,7 @@ export const FormikComponent: React.FC = () => {
     register(data).then((response) => {
       if (response.message === 'User registered successfully') {
         toast('🦄 Congrats, you registered successful! Now you can login');
-        navigate('/login');
+        navigate(routes.login);
       }
     });
   };

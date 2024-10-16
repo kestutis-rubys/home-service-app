@@ -30,8 +30,8 @@ router.post('/login', async (req: any, res: any) => {
     return res.status(401).json({ message: 'Incorrect email or password' });
   }
   const token = generateToken({ id: user._id });
-  const { name } = user;
-  return res.status(200).json({ token, name });
+  const { password: _, ...data } = user.toObject();
+  return res.status(200).json({ token, data });
 });
 
 export default router;

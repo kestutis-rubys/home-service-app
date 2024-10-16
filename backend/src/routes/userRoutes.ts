@@ -5,9 +5,11 @@ import authMiddleware from '../middlewares/authMiddleware';
 const router = express.Router();
 
 router.get('/', authMiddleware, async (req: Request, res: Response) => {
+  const _id = (req as any).user.id;
   try {
-    const users = await UserModel.find();
-    res.json(users);
+    const user = await UserModel.findById({ _id });
+    const { password, ...rest } = user?.toObject() as any;
+    res.json(rest);
   } catch (err) {
     res.status(500).json({ message: (err as Error).message });
   }
