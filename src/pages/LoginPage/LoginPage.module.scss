@@ -29,29 +29,46 @@
       margin-bottom: 35px;
       font-weight: 700;
     }
-  }
 
-  .loginPageForm {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 75%;
-  }
-  .registerText {
-    text-align: center;
+    .registerText {
+      margin: 20px 0 0 0;
+      text-align: center;
 
-    strong {
-      color: #785be6;
-      text-decoration: none;
-      transition: ease-in-out 500ms;
-      cursor: pointer;
-
-      &:hover {
-        color: #000;
+      strong {
+        color: #785be6;
+        text-decoration: none;
         transition: ease-in-out 500ms;
+        cursor: pointer;
+
+        &:hover {
+          color: #000;
+          transition: ease-in-out 500ms;
+        }
       }
     }
   }
+
+  // .loginPageForm {
+  //   display: flex;
+  //   flex-direction: column;
+  //   gap: 20px;
+  //   width: 75%;
+  // }
+  // .registerText {
+  //   text-align: center;
+
+  //   strong {
+  //     color: #785be6;
+  //     text-decoration: none;
+  //     transition: ease-in-out 500ms;
+  //     cursor: pointer;
+
+  //     &:hover {
+  //       color: #000;
+  //       transition: ease-in-out 500ms;
+  //     }
+  //   }
+  // }
 
   @media screen and (max-width: $small) {
     padding: 0 25px;

@@ -8,6 +8,7 @@ import { routes } from '../../../routes/router';
 import { useContext } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { Menu } from '../Menu/Menu';
+import UserMenu from '../UserMenu/UserMenu';
 
 // import logo from '../../../assets/starfix-logo.png';
 
@@ -40,16 +41,20 @@ export const TopBar: React.FC = () => {
         {context.width > 768 && <Menu />}
 
         <div className={styles.authButtons}>
-          {userContext?.user ? (
-            <p className={styles.user} onClick={() => handleProfile()}>
-              <span>{userContext.user.charAt(0).toUpperCase()}</span>
-            </p>
+          {userContext?.user?.name ? (
+            <div className={styles.user} onClick={() => handleProfile()}>
+              <span>{userContext?.user?.name?.charAt(0).toUpperCase()}</span>
+              <div className={styles.userMenu}>
+                <UserMenu />
+              </div>
+            </div>
           ) : (
             <Button
               action={handleLogin}
               style='login'
               type='button'
               text='Login / Sign Up'
+              disabled={false}
             />
           )}
         </div>

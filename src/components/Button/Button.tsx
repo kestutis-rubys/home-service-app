@@ -5,14 +5,27 @@ interface ButtonProps {
   text: string;
   style: 'login' | 'loginForm' | 'service' | 'icon';
   type: 'button' | 'submit';
+  disabled: boolean;
   icon?: React.ReactNode;
 }
 
-export const Button = ({ action, text, style, type, icon }: ButtonProps) => {
+export const Button = ({
+  action,
+  text,
+  style,
+  type,
+  disabled,
+  icon,
+}: ButtonProps) => {
   const className = `${styles[style]}`;
 
   return (
-    <button className={className} type={type} onClick={action}>
+    <button
+      className={className}
+      type={type}
+      onClick={action}
+      disabled={disabled}
+    >
       {icon} {text}
     </button>
   );

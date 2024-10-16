@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 export interface User {
   id: string;
   name: string;
-  charAt: any;
 }
 
 interface UserContextType {
@@ -20,10 +19,16 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [user, setUser] = useState<User | null>(null);
 
+  console.log(user);
+
   useEffect(() => {
     const user = localStorage.getItem('user');
     if (user) {
-      setUser(JSON.parse(user));
+      try {
+        setUser(JSON.parse(user));
+      } catch (error) {
+        console.error('Error parsing user data', error);
+      }
     }
   }, []);
 

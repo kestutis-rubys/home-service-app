@@ -31,6 +31,7 @@
 }
 
 .user {
+  position: relative;
   background: #785be6;
   padding: 10px 15px;
   border-radius: 50%;
@@ -47,5 +48,18 @@
     font-size: 16px;
     font-weight: 600;
     margin: 0 0 2px 0;
+  }
+
+  .userMenu {
+    display: block;
+    position: absolute;
+    top: 50px;
+    transition: ease-in-out 500ms;
+    opacity: 0;
+  }
+
+  &:hover .userMenu {
+    opacity: 1;
+    transition: ease-in-out 500ms;
   }
 }

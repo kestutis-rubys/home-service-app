@@ -24,9 +24,8 @@ router.post('/register', async (req: any, res: any) => {
 });
 
 router.post('/login', async (req: any, res: any) => {
-  const { email, password } = req.body;
-
-  const user = await UserModel.findOne({ email });
+  const { username, password } = req.body;
+  const user = await UserModel.findOne({ username });
   if (!user || !(await user.matchPassword(password))) {
     return res.status(401).json({ message: 'Incorrect email or password' });
   }

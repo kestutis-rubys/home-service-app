@@ -1,5 +1,6 @@
 import styles from './ServiceCard.module.scss';
 import { Button } from '../Button/Button';
+import { useNavigate } from 'react-router-dom';
 
 interface BusinessData {
   category: string;
@@ -16,8 +17,16 @@ interface ServiceCardProps {
 export const ServiceCard: React.FC<ServiceCardProps> = ({ data }) => {
   const { category, serviceName, name, address, photoUrl } = data;
 
+  const navigate = useNavigate();
+
+  const handleBusinessClick = () => {
+    navigate(`/detail/${serviceName.split(' ').join('-').toLowerCase()}`, {
+      state: data,
+    });
+  };
+
   return (
-    <div className={styles.cardContainer}>
+    <div className={styles.cardContainer} onClick={() => handleBusinessClick()}>
       <img src={photoUrl} alt={serviceName} />
       <div className={styles.textContainer}>
         <h3>{category}</h3>
@@ -26,7 +35,12 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ data }) => {
           <h4>{name}</h4>
           <p>{address}</p>
         </div>
-        <Button style='service' type='button' text='Book now' />
+        <Button
+          style='service'
+          type='button'
+          text='Book now'
+          disabled={false}
+        />
       </div>
     </div>
   );

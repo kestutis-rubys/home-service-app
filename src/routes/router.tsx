@@ -8,6 +8,7 @@ import { RegisterPage } from '../pages/RegisterPage/RegisterPage.js';
 import { CategoryPage } from '../pages/CategoryPage/CategoryPage.js';
 import { SearchCategoryPage } from '../pages/SearchCategoryPage/SearchCategoryPage.js';
 import { ProfilePage } from '../pages/ProfilePage/ProfilePage.js';
+import BusinessPage from '../pages/BusinessPage/BusinessPage.js';
 
 export const routes = {
   home: '/',
@@ -18,6 +19,7 @@ export const routes = {
   profile: '/profile',
   category: '/search/:category',
   search: '/category/:search',
+  detail: '/detail/:id',
 };
 
 export const router = createBrowserRouter([
@@ -56,6 +58,10 @@ export const router = createBrowserRouter([
       {
         path: routes.search,
         element: <SearchCategoryPage />,
+      },
+      {
+        path: routes.detail,
+        element: <BusinessPage />,
       },
     ],
   },

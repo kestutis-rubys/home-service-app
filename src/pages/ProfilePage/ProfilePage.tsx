@@ -1,3 +1,7 @@
+import { checkUserIsLogged } from '../../utils/checkUserIsLogined';
+
 export const ProfilePage: React.FC = () => {
-  return <div>ProfilePage</div>;
+  const isShowingForm = checkUserIsLogged();
+
+  return !isShowingForm && <div>Profile Page</div>;
 };
